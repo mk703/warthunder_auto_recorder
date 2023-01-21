@@ -1,0 +1,12 @@
+[connection]
+host = "localhost"
+port = 4455
+password = ""
+
+[storage]
+save_path = "D:/REP"
+save_days = 7
+
+[window]
+height = "200"
+weight = "200"
