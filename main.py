@@ -9,7 +9,6 @@ import os
 import tomli
 import define_window_size
 
-
 define_window_size.op()
 
 f = open("config.toml", "rb")
@@ -38,6 +37,9 @@ telem = telemetry.TelemInterface()
 while True:
     if telem.get_telemetry():
         cl.start_record()
+        print("A new match starts")
         while telem.get_telemetry():
             time.sleep(1)
         cl.stop_record()
+        print("The match ends")
+    time.sleep(1)
