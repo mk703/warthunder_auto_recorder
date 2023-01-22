@@ -15,4 +15,4 @@
 - 启动obs和warthunder
 - 在本地运行main.exe
 ### 程序运行不正常
-按win+r进入main.exe目录运行main.exe，将报错上传反馈
+在cmd中进入main.exe目录运行main.exe，将报错上传反馈，感谢您的支持
