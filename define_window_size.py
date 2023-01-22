@@ -8,7 +8,7 @@ def op():
     print(toml_dict)
     h = toml_dict.get('window').get('height')
     w = toml_dict.get('window').get('weight')
-    os.popen('mode con cols=' + h + 'lines=' + w)
+    os.system('mode con cols=' + w + 'lines=' + h)
 
 
 if __name__ == '__main__':

@@ -11,6 +11,7 @@ import define_window_size
 
 
 define_window_size.op()
+
 f = open("config.toml", "rb")
 toml_dict = tomli.load(f)
 print(toml_dict)
@@ -20,14 +21,15 @@ files = os.listdir(path)
 starttime = datetime.now()
 d1 = starttime + timedelta(days=-save_days)
 date1 = str(d1)
-index = date1.find('.')  # 第一次出现的位置
+index = date1.find('.')
 datatime01 = date1[:index]
 for file in files:
     filePath = path + "/" + file
     last1 = os.stat(filePath).st_mtime  # 获取文件的时间戳
     filetime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(last1))  # 将时间戳格式化成时间格式的字符串
-    if datatime01 > filetime:  # datatime01是当前时间7天前的时间，filetime是文件修改的时间，如果文件时间小于(早于)datatime01时间，就删除
+    if datatime01 > filetime:
         print(filePath + " was removed!")
+        os.remove(filePath)
 
 cl = obs.ReqClient()
 print("obs web socket connected!")
